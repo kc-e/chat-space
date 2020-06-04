@@ -18,7 +18,7 @@
 |group_id|integer|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- has_many :groups
+- belongs_to :groups
 
 ## groupsテーブル
 
