@@ -1,0 +1,198 @@
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+}
+
+.side_bar {
+  flex-direction: column;
+  width: 300px;
+  //font-weight: bold;
+  color: #ffffff;
+  &__name {
+    background-color: #253141;
+    width: 300px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    &__menu {
+      //background-color: #253141;
+      width: 260px;
+      height: 20px;
+      margin: 0px 20px;
+      display: flex;
+      justify-content: space-between;
+      &__text {
+        //background-color: #253141;
+        width: 60px;
+        height: 20px;
+        font-size: 16px;
+        font-weight: bold;
+      }
+      &__icon {
+        .edit {
+          a {
+            text-decoration: none;
+            color: #ffffff;
+          }
+        }
+        .cog {
+          a {
+            text-decoration: none;
+            color: #ffffff;
+          }
+          margin-left: 5px;
+        }
+        width: 60px;
+        height: 20px;
+        //background-color: #253141;
+        display: flex;
+        justify-content: flex-end;
+      }
+    }
+  }
+  &__group_list {
+    background-color: #2f3e51;
+    width: 300px;
+    height: calc(100vh - 100px);
+    padding: 0px 20px;
+    overflow: scroll;
+    &__menu{
+      height: calc(20px + 15px + 5px + 11px + 40px);
+      &__group_name {
+      height: calc(20px + 15px + 5px);
+      padding-top: 20px;
+      padding-bottom: 5px;
+      font-size: 15px;
+    }
+      &__group_message {
+        height: calc(11px + 40px);
+        padding-bottom: 40px;
+        margin-top: 5px;
+        font-size: 11px;
+      }
+    }
+  }
+}
+
+
+.main_chat {
+  flex-direction: column;
+  &__group_info {
+    background-color: #ffffff;
+    width: calc(100vw - 300px);
+    height: 100px;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    justify-content: space-between;
+    &__menu {
+      height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding-left: 40px;
+      &__name {
+        height: calc(35px + 20px);
+        padding-top: 35px;
+        font-size: 20px;
+        color: #333333;
+      }
+      &__member {
+        height: calc(15px + 20px);
+        padding-top: 15px;
+        font-size: 12px;
+        color: #999999;
+      }
+    }
+    &__button {
+      a {
+        text-decoration: none;
+        color: #38aef0;
+      }
+        height: 40px;
+        margin-top: 28px;
+        margin-right: 40px;
+        line-height: 40px;
+        padding: 0px 20px;
+        border: 1px solid #38aef0;
+        font-size: 16px;
+    }
+  }
+  &__message_list {
+    background-color: #fafafa;
+    width: calc(100vw - 300px);
+    height: calc(100vh - (100px + 90px) );
+    padding-left: 40px;
+    overflow: scroll;
+    &__menu {
+      display: flex;
+      margin-top: 35px;
+      margin-bottom: 12px;
+      &__name {
+        font-size: 16px;
+        color: #333333;
+      }
+      &__datetime {
+        font-size: 12px;
+        color: #999999;
+        margin-left: 10px;
+      }
+    }
+    &__message {
+      font-size: 14px;
+      color: #434a54;
+    }
+  }
+
+  &__message_form {
+    background-color: #dddddd;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px 20px 40px;
+    &__message_image_send{
+      width: 100%;
+      height: 50px;
+      display: flex;
+      &__message{
+        width: 100%;
+        height: 50px;
+        background-color: #ffffff;
+        line-height: 50px;
+        color: #999999;
+        padding-left: 15px;
+      }
+      &__image {
+        height: 50px;
+        padding-right: 10px;
+        background-color: #ffffff;
+      }
+      &__send {
+      height: 50px;
+      background-color: #38aef0;
+      line-height: 50px;
+      margin-left: 15px;
+      padding: 0px 30px;
+      color: #ffffff;
+      }
+      
+    }
+  }
+}
+
+.input-box__image {
+  height: 50px;
+  line-height: 50px;
+  font-size: 1.5em;
+}
+
+.file_choose {
+  display: none;
+}
+
+.under_line {
+  text-decoration: none;
+}
