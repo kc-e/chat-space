@@ -6,7 +6,7 @@
       .main_chat__group_info__menu__member
         Member : masa
     .main_chat__group_info__button
-      = link_to 'Edit', "https://www.facebook.com/", class: "under_line" 
+      = link_to 'Edit', "＃", class: "under_line" 
   
 
   .main_chat__message_list
@@ -33,7 +33,7 @@
         type a message
       .main_chat__message_form__message_image_send__image
         //画像アイコンとファイル選択ボタンを重ねるイメージ
-        %label{class: "input-box__image"}
+        %label.input-box__image
           = icon('far', 'image')
           %input{type: "file" ,class: "file_choose"}
     .main_chat__message_form__message_image_send__send
