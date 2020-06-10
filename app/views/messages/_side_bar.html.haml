@@ -2,13 +2,13 @@
   .side_bar__name
     .side_bar__name__menu
       .side_bar__name__menu__text 
-        masa
+        = current_user.name
       %ul.side_bar__name__menu__icon
         %li.edit
           = link_to "＃" do
             = icon('fas', 'edit')
         %li.cog
-          = link_to "＃" do
+          = link_to edit_user_path(current_user) do
             = icon('fas', 'cog')
   .side_bar__group_list
     .side_bar__group_list__menu 
