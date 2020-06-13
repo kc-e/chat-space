@@ -4,20 +4,19 @@
       .side_bar__name__menu__text 
         = current_user.name
       %ul.side_bar__name__menu__icon
-        %li.edit
-          = link_to "＃" do
-            = icon('fas', 'edit')
-        %li.cog
-          = link_to edit_user_path(current_user) do
-            = icon('fas', 'cog')
+        %li.side_bar__name__menu__icon__edit_cog
+        = link_to new_group_path(current_user), class: "side_bar__name__menu__icon__edit" do
+          = icon('fas', 'edit')
+        %li.side_bar__name__menu__icon__edit_cog
+        = link_to edit_user_path(current_user), class: "side_bar__name__menu__icon__cog" do
+          = icon('fas', 'cog')
   .side_bar__group_list
-    .side_bar__group_list__menu 
-      .side_bar__group_list__menu__group_name 
-        sample
-      .side_bar__group_list__menu__group_message 
-        まだメッセージがありません
-    .side_bar__group_list__menu
-      .side_bar__group_list__menu__group_name 
-        sample
-      .side_bar__group_list__menu__group_message 
-        まだメッセージがありません
+    - current_user.groups.each do |group|
+      .side_bar__group_list__menu
+        = link_to group_messages_path(group), class: "side_bar__group_list__menu__test" do
+          .side_bar__group_list__menu__test__group_name 
+            = group.name
+          .side_bar__group_list__menu__test__group_message
+            = group.show_last_message
+            //メッセージはまだありません
+    //= link_to '#', class: "side_bar__group_list__menu__test" do 

@@ -29,23 +29,19 @@
         font-weight: bold;
       }
       &__icon {
-        .edit {
-          a {
-            text-decoration: $icon-style;
-            color: $side_bar_color;
-          }
-        }
-        .cog {
-          a {
-            text-decoration: $icon-style;
-            color: $side_bar_color;
-          }
-          margin-left: 5px;
-        }
         width: 60px;
         height: 20px;
         display: flex;
         justify-content: flex-end;
+        &__edit {
+          text-decoration: none;
+          color: $side_bar_color; 
+        }
+        &__cog {
+          text-decoration: none;
+          color: $side_bar_color;
+          margin-left: 5px; 
+        }
       }
     }
   }
@@ -57,17 +53,21 @@
     overflow: scroll;
     &__menu{
       height: calc(20px + 15px + 5px + 11px + 40px);
-      &__group_name {
-      height: calc(20px + 15px + 5px);
-      padding-top: 20px;
-      padding-bottom: 5px;
-      font-size: 15px;
-    }
-      &__group_message {
-        height: calc(11px + 40px);
-        padding-bottom: 40px;
-        margin-top: 5px;
-        font-size: 11px;
+      &__test {
+      text-decoration: none;
+      color: $side_bar_color;
+        &__group_name {
+        height: calc(20px + 15px + 5px);
+        padding-top: 20px;
+        padding-bottom: 5px;
+        font-size: 15px;
+      }
+        &__group_message {
+          height: calc(11px + 40px);
+          padding-bottom: 40px;
+          margin-top: 5px;
+          font-size: 11px;
+        }
       }
     }
   }
@@ -95,11 +95,15 @@
         font-size: 20px;
         color: $main_chat_name;
       }
-      &__member {
+      &__member_list {
         height: calc(15px + 20px);
         padding-top: 15px;
         font-size: 12px;
+        display: flex;
         color: $main_chat_color_MemberDatetimeFormtext;
+        &__member{
+          color: $main_chat_color_MemberDatetimeFormtext;
+        }
       }
     }
     &__button {
@@ -149,39 +153,46 @@
     justify-content: space-between;
     align-items: center;
     padding: 20px 50px 20px 40px;
-    &__message_image_send{
+    &__Form {
       width: 100%;
-      height: 50px;
       display: flex;
-      background-color: $main_chat_background-color;
-      &__message{
+      &__menu {
         width: 100%;
         height: 50px;
-        line-height: 50px;
-        color: $main_chat_color_MemberDatetimeFormtext;
-        padding-left: 15px;
-      }
-      &__image {
-        height: 50px;
-        padding-right: 10px;
+        display: flex;
+        background-color: $main_chat_background-color;
+        //background-color: red;
+        &__message {
+          width: 100%;
+          height: 50px;
+          line-height: 50px;
+          color: $main_chat_color_MemberDatetimeFormtext;
+          padding-left: 15px;
+          border: none;
+        }
+        &__image {
+          height: 50px;
+          padding-right: 10px;
+          line-height: 50px;
+          font-size: 1.5em;
+        }
       }
       &__send {
-      height: 50px;
-      background-color: $main_chat_button;
-      line-height: 50px;
-      margin-left: 15px;
-      padding: 0px 30px;
-      color: #ffffff;
+        height: 50px;
+        background-color: $main_chat_button;
+        //background-color: blue;
+        line-height: 50px;
+        margin-left: 15px;
+        padding: 0px 30px;
+        color: #ffffff;
       }
-      
     }
   }
 }
 
-.input-box__image {
+.Form__icon {
   height: 50px;
-  line-height: 50px;
-  font-size: 1.5em;
+  padding-right: 10px;
 }
 
 .file_choose {
