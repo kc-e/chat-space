@@ -2,40 +2,28 @@
   .main_chat__group_info
     .main_chat__group_info__menu
       .main_chat__group_info__menu__name
-        test
-      .main_chat__group_info__menu__member
-        Member : masa
+        = @group.name
+      .main_chat__group_info__menu__member_list
+        Member ：
+        .main_chat__group_info__menu__member_list__member
+          = current_user.name
     .main_chat__group_info__button
-      = link_to 'Edit', "＃", class: "under_line" 
+      = link_to 'Edit', edit_group_path(current_user), class: "under_line" 
   
 
   .main_chat__message_list
-    .main_chat__message_list__menu
-      .main_chat__message_list__menu__name
-        masa
-      .main_chat__message_list__menu__datetime
-        2019/11/20(Wed) 17:43:01
-    .main_chat__message_list__message
-      おはよう!
-    .main_chat__message_list__menu
-      .main_chat__message_list__menu__name
-        masa
-      .main_chat__message_list__menu__datetime
-        2019/11/20(Wed) 17:43:01
-    .main_chat__message_list__message
-      おはよう!
+    = render @messages 
+    
+   
 
 
   .main_chat__message_form
-    .main_chat__message_form__message_image_send
-      //でかい箱を作る(入力フォームと画像アイコンとSENDボタンを入れるやつ)
-      .main_chat__message_form__message_image_send__message
-        type a message
-      .main_chat__message_form__message_image_send__image
-        //画像アイコンとファイル選択ボタンを重ねるイメージ
-        %label.input-box__image
-          = icon('far', 'image')
-          %input{type: "file" ,class: "file_choose"}
-    .main_chat__message_form__message_image_send__send
-      Send
-      
+    = form_with model: [@group, @message], html: {class: "main_chat__message_form__Form"}, local: true do |f|
+      .main_chat__message_form__Form__menu
+        = f.text_field :content, class: 'main_chat__message_form__Form__menu__message', placeholder: 'type a message'
+        = f.label :image, class: 'main_chat__message_form__Form__menu__image' do
+          = icon('far', 'image', class: 'input-box__image')
+          = f.file_field :image, class: 'file_choose'
+      = f.submit 'Send', class: 'main_chat__message_form__Form__send'
+    
+ 
